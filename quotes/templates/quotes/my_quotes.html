@@ -1,0 +1,12 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h4>Quotes posted by : {{the_user.first_name}} {{the_user.last_name }}</h4>
+{%for quote in the_user.quotes.all%}
+<br>
+<div class="bg-dark text-white p-2">
+{{quote.author}}
+<p class=" font-italic bg-secondary text-white p-2">{{quote.quote}}</p>
+</div>
+{%endfor%}
+{% endblock content%}
